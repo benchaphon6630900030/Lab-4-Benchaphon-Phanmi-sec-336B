@@ -1,0 +1,21 @@
+class Cylinder_A:
+    height_A = float(input('Height of cylinder_A: ')) #5
+    radian_A = float(input('Radius of Cylinder_A: ')) #10
+    
+    def Cal_A(self):
+        self.measure = 3.14*self.height_A*self.height_A*self.radian_A
+        return self.measure
+        
+class Cylinder_B:
+    height_B = float(input('Height of Cylinder_B: ')) #7
+    radian_B = float(input('Radius of Cylinder_B: ')) #13
+    
+    def Cal_B(self):
+        self.measure = 3.14*self.height_B*self.height_B*self.radian_B
+        return self.measure
+        
+C_A = Cylinder_A()
+C_B = Cylinder_B()
+
+print("Cylinder_A measure = " + str(C_A.Cal_A()))
+print("Cylinder_B measure = " + str(C_B.Cal_B()))
