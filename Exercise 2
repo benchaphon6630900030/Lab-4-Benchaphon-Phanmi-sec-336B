@@ -1,0 +1,11 @@
+class Pyramid():
+    Lenght = float(input('Lengh of pyr: ')) #10
+    Width  = float(input('Width of pyr: ')) #7
+    Height = float(input('Height of pyr: ')) #17
+    
+    def Calculate(self):
+        self.measure = self.Lenght*self.Width*self.Height/3
+        return self.measure
+
+Pyr = Pyramid()
+print("Pyramid measure = " + str(Pyr.Calculate()))
