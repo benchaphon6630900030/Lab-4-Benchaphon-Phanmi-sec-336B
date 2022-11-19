@@ -1,0 +1,76 @@
+class Node:    
+    def __init__(self, data = None):        
+        self.data = data        
+        self.nextval = None
+
+class SLinkedList:    
+    def __init__(self):        
+        self.head = None    
+        #3.2       
+    def create_header(self, new_element):             
+        newNode = Node(new_element)         
+        newNode.nextval = self.head        
+        self.head = newNode    
+    #3.3     
+    def last_index(self, new):        
+        newNode = Node(new)        
+        node = self.head        
+        while(node.nextval != None):            
+            node = node.nextval        
+            node.nextval = newNode    
+    #3.4            
+    def delete_node(self, position):             
+        if (position == 1 and self.head != None):            
+            nodeDelete = self.head            
+            self.head = self.head.nextval           
+            nodeDelete = None        
+        else:                
+            temp = self.head            
+            for i in range(1, position-1):                
+                if(temp != None):
+                    temp = temp.nextval              
+            if(temp != None and temp.nextval != None):                
+                nodeDelete = temp.nextval                
+                temp.nextval = temp.nextval.nextval                
+                nodeDelete = None 
+                
+        def PrintList(self):        
+            temp = self.head        
+            if(temp != None):           
+                print(end=" ")            
+                while (temp != None):                
+                    print(temp.data, end=" ")                
+                    temp = temp.nextval            
+                print()        
+            else:            
+                print("list is desolate")
+llist = SLinkedList()
+node1 = Node(44)
+node2 = Node(36)
+node3 = Node(90)
+node4 = Node(10)
+node5 = Node(60)
+node6 = Node(99)
+
+llist.head = node1
+node1.nextval = node2
+node2.nextval = node3
+node3.nextval = node4
+node4.nextval = node5
+node5.nextval = node6
+
+print("Linked List : ")
+llist.PrintList()
+
+print("\n Insert 104 for header : ")
+llist.last_index(57)
+llist.PrintList()
+
+print("\n append 57 for index : ")
+llist.create_header(104)
+llist.PrintList()
+llist.delete_node(1) 
+
+print("\n Remove value index 4(10) : ")
+llist.delete_node(4)
+llist.PrintList()
